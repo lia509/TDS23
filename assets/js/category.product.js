@@ -37,7 +37,7 @@ class CategoryService{
         const category = new Category(id, name);
         this.categories.push(category);
     }
-
+//    R => Read
     getCategoryById(id){
         return this.categories.find((category) => category.id == id)
     }
@@ -102,6 +102,10 @@ function FindCategory(id) {
     console.log(category);
 }
 
+function EditCategory(id, name){
+    categoriesList.updateCategory(id, name)
 
+    console.log(categoriesList.categories);
+}
 
 
