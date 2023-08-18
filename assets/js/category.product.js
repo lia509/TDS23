@@ -91,7 +91,7 @@ const productList = new ProductService;
 
 
 
-// FUNCTIONS
+// FUNCTIONS CATEGORIAS
 
 
 function CreateCategory() {
@@ -105,16 +105,6 @@ function CreateCategory() {
 
     console.log(categoriesList.categories);
 
-}
-
-function CreateProduct() {
-    const productName = "Choco";
-    const productPrice = 0.50;
-    const productCategory = categoriesList.categories[0];
-
-    productList.addProduct(productName, productPrice, productCategory)
-
-    console.log(productList.products);
 }
 
 function FindCategory(id) {
@@ -135,3 +125,30 @@ function deleteCategory(id){
     console.log(categoriesList.categories);
 }
 
+//FUNCTIONS PRODUTOS
+function CreateProduct() {
+    const productName1 = "Choco";
+    const productPrice1 = 0.50;
+    const productCategory1 = categoriesList.categories[0];
+
+    const productName2 = "Wine";
+    const productPrice2 = 15.00;
+    const productCategory2 = categoriesList.categories[1];
+
+    const productName3 = "Chips";
+    const productPrice3 = 7.00;
+    const productCategory3 = categoriesList.categories[2];
+
+
+    productList.addProduct(productName1, productPrice1, productCategory1)
+    productList.addProduct(productName2, productPrice2, productCategory2)
+    productList.addProduct(productName3, productPrice3, productCategory3)
+
+    console.log(productList.products);
+}
+
+function FindProduct(id) {
+    const product =  productList.getCategoryById(id);
+
+    console.log(product);
+}
