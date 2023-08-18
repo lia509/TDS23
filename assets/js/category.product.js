@@ -46,6 +46,13 @@ class CategoryService{
         const category = this.getCategoryById(id);
         category.name = name;
     }
+// D => Delete
+    deleteCategory(id){
+        const category = this.getCategoryById(id);
+        const index = this.categories.indexOf(category);
+
+        this.categories.splice(index, 1 )
+    }
 }
 
 
