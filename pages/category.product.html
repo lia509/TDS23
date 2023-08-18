@@ -10,14 +10,19 @@
 </head>
 <body>
     <div id="containers">
-        <h1>🛍 Categorias & Produtos</h1>
+        <h1>🛍️ Categorias & Produtos</h1>
         <div class="form-container">
                 <h2>📁 Criar Categorias</h2>
-                <label for="">Nome da categoria</label>
-                <input type="text" id="" required/>
-                <button onclick="" class="bnt">Criar Categorias</button>
+                <label for="categoryNameInput">Nome da categoria</label>
+                <input type="text" id="categoryNameInput" required/>
+                <button onclick="CreateCategory()" class="bnt">Criar Categorias</button>
+        </div>
+        <div id="list-container">
+            <h2>📋 Categorias & Produtos</h2>
+            <ul id="categoriesList"></ul>
         </div>
     </div>
+
     
 </body>
 </html>

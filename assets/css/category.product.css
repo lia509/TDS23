@@ -32,12 +32,21 @@ h2{
     background-color: #f1ebeb;
 }
 
-.form-container label{
+.form-container label {
     display: block;
     margin-bottom: 0.625rem;
+
+}
+
+.form-container input {
+    display: block;
+    margin-bottom: 0.625rem;
+    width: 97%;
+    padding: 0.625rem;
     border: 1px solid #ccc;
     border-radius: 3px;
 }
+
 
 .bnt{
     background-color: #fd1b1b;
@@ -52,4 +61,27 @@ h2{
 .bnt:hover{
     background-color: #e60e0e;
     transform: scale(1.05);
+}
+
+#list-container{
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    max-height: 20rem;
+    overflow-y: auto ;
+}
+
+#list-container ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#list-container li{
+    margin-bottom: 0.625rem ;
+    padding: 0.625rem;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
 }

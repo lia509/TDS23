@@ -95,15 +95,14 @@ const productList = new ProductService;
 
 
 function CreateCategory() {
-    const categoryName = "Candies";
-    const categoryName1 = "Drinks";
-    const categoryName2 = "Snacks";
+    const categoryName = document.getElementById("categoryNameInput").value;
 
-    categoriesList.addCategory(categoryName);
-    categoriesList.addCategory(categoryName1);
-    categoriesList.addCategory(categoryName2);
+     categoriesList.addCategory(categoryName);
 
     console.log(categoriesList.categories);
+
+    DisplayCategories();
+    ClearFields();
 
 }
 
@@ -151,4 +150,17 @@ function FindProduct(id) {
     const product =  productList.getCategoryById(id);
 
     console.log(product);
+}
+
+function DisplayCategories(){
+    let content = "";
+
+    categoriesList.categories.forEach((category) => {
+        content+= `<li> ${category.name}</li>`
+    });
+    document.getElementById("categoriesList").innerHTML = content;
+}
+
+function ClearFields(){
+    document.getElementById("categoryNameInput").value = ""
 }
