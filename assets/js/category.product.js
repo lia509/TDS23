@@ -24,10 +24,12 @@ class CategoryService{
         this.categories = [];
         this.nextCategoryId = 1;
     }
-    // CRUD => Create
-    // CRUD => Read
-    // CRUD => Update
-    // CRUD => Delete
+
+    /* CRUD => Create
+     CRUD => Read
+     CRUD => Update
+     CRUD => Delete*/
+
     addCategory(name){
         const id = this.nextCategoryId;
         this.nextCategoryId++;
@@ -40,6 +42,10 @@ class CategoryService{
         return this.categories.find((category) => category.id == id)
     }
 }
+
+
+
+
 
 class ProductService{
     constructor(){
@@ -85,7 +91,11 @@ function CreateProduct() {
 
 // R => Read
 
+function FindCategory(id) {
+    const category =  categoriesList.getCategoryById(id);
 
+    console.log(category);
+}
 
 
 
