@@ -1,5 +1,5 @@
-// Cada categoria possui vários produtos
-// Cada produto é pertencente a uma categoria
+/* Cada categoria possui vários produtos
+ Cada produto é pertencente a uma categoria */
 
 class Category {
     constructor(id, name){
@@ -15,7 +15,6 @@ class Product{
         this.name = name;
         this.price = price;
         this.category = category;
-
     }
 }
 
@@ -25,11 +24,7 @@ class CategoryService{
         this.nextCategoryId = 1;
     }
 
-    /* CRUD => Create
-     CRUD => Read
-     CRUD => Update
-     CRUD => Delete*/
-
+// CRUD => Create
     addCategory(name){
         const id = this.nextCategoryId;
         this.nextCategoryId++;
@@ -37,7 +32,7 @@ class CategoryService{
         const category = new Category(id, name);
         this.categories.push(category);
     }
-//    R => Read
+// R => Read
     getCategoryById(id){
         return this.categories.find((category) => category.id == id)
     }
@@ -64,7 +59,7 @@ class ProductService{
         this.products = [];
         this.nextProductId = 1;
     }
-
+// C create
     addProduct(name, price, category){
         const id = this.nextProductId;
         this.nextProductId++
@@ -73,10 +68,31 @@ class ProductService{
         this.products.push(product);
         category.products.push(product);
     }
+// R => Read
+    getCategoryById(id){
+        return this.products.find((product) => product.id == id)
+    }
+// U => Update
+    updateCategory(id, name){
+        const category = this.getCategoryById(id);
+        category.name = name;
+    }
+// D => Delete
+    deleteCategory(id){
+        const category = this.getCategoryById(id);
+        const index = this.categories.indexOf(category);
+
+        this.categories.splice(index, 1 )
+    }
 }
 
 const categoriesList = new CategoryService;
 const productList = new ProductService;
+
+
+
+// FUNCTIONS
+
 
 function CreateCategory() {
     const categoryName = "Candies";
@@ -100,8 +116,6 @@ function CreateProduct() {
 
     console.log(productList.products);
 }
-
-// R => Read
 
 function FindCategory(id) {
     const category =  categoriesList.getCategoryById(id);
